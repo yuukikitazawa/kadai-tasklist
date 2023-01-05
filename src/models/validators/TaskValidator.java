@@ -5,7 +5,7 @@ import java.util.List;
 
 import models.Task;
 
-public class Taskvalidator {
+public class TaskValidator {
     public static List<String> validate(Task m) {
         List<String> errors = new ArrayList<String>();
 
@@ -27,5 +27,3 @@ public class Taskvalidator {
         return "";
     }
 }
-
-
