@@ -40,9 +40,9 @@ public class ShowServlet extends HttpServlet {
         em.close();
 
 
-        request.setAttribute("message", m);
+        request.setAttribute("task", m);
 
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/messages/show.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/tasks/show.jsp");
         rd.forward(request, response);
     }
 }

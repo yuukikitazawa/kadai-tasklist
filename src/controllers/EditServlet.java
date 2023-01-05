@@ -39,13 +39,22 @@ public class EditServlet extends HttpServlet {
         em.close();
 
 
-        request.setAttribute("message", m);
+        request.setAttribute("task", m);
         request.setAttribute("_token", request.getSession().getId());
 
+        if(m != null) {  request.getSession().setAttribute("task_id", m.getId());
 
-        request.getSession().setAttribute("message_id", m.getId());
+        }
 
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/messages/edit.jsp");
+
+        request.getSession().setAttribute("task_id", m.getId());
+
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/tasks/edit.jsp");
         rd.forward(request, response);
     }
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // TODO Auto-generated method stub
+        doGet(request, response);
+    }
+
 }
